@@ -1,0 +1,31 @@
+{
+  "name": "nuxt-content-static-starter",
+  "description": "A modern starter for Nuxt using content for CMS and export for static site generation.",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "export": "nuxt export",
+    "serve": "nuxt serve"
+  },
+  "dependencies": {
+    "@mdi/js": "^5.3.45",
+    "@nuxt/content": "^1.3.2",
+    "@nuxtjs/axios": "^5.11.0",
+    "@nuxtjs/pwa": "^3.0.0-beta.20",
+    "nuxt": "^2.13.0",
+    "nuxt-webfontloader": "^1.1.0"
+  },
+  "devDependencies": {
+    "@aceforth/nuxt-optimized-images": "^1.0.1",
+    "@nuxtjs/vuetify": "^1.11.2",
+    "imagemin-mozjpeg": "^9.0.0",
+    "imagemin-pngquant": "^9.0.0",
+    "imagemin-svgo": "^8.0.0",
+    "node-sass": "^4.14.1",
+    "nuxt-purgecss": "^1.0.0",
+    "sass-loader": "^8.0.2"
+  }
+}
