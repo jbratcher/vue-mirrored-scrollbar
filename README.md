@@ -28,6 +28,8 @@ Quickly bootstrap a blog, CMS, or static site using the power of Nuxt, Nuxt Cont
 - [About](#about)
 - [Getting Started](#getting_started)
 - [Deployment](#deployment)
+- [Usage](#usage)
+- [Docker](#docker)
 
 ## About <a name = "about"></a>
 
@@ -53,6 +55,8 @@ You will need to have Node and npm installed.
 ## Getting Started <a name = "getting_started"></a>
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. Deployment is dead simple using Netlify. Just one click for initial deployment and automatic deploys when you push new changes to Github.
+
+## Deployment <a name = "deployment"></a>
 
 The quickest way to get started is with Netlify's hyper-convenient **one-click Deploy To Netlify**, which will automatically create an instance of this project on your GitHub account and deploy it instantly to Netlify.
 
@@ -95,7 +99,35 @@ yarn start
 yarn generate
 ```
 
-## Docker
+## Usage <a name = "usage"></a>
+
+### Vuetify breakpoint fix
+
+Vuetify currently has a bug where the breakpoint variable is lost on a page refresh. To prevent this we are using workaround in the form of a custom plugin, `breakpoint.js`. This plugin makes \$breakpoint globally available which persists on page refresh. See this [Vuetify issue](https://github.com/vuetifyjs/vuetify/issues/3436) for more details.
+
+### Global Components
+
+There are two main global components used for page intros, TheHero and TheSplash. TheHero is more prominent and contains a button prop that will link to a page or part of a page. TheSplash is used for displaying content only.
+
+There is also a MenuLinks component that is used to display a list of navigation links.
+
+### Google Custom Fonts
+
+You can use any Google font by name. in `nuxt.config.js` simply replace the current font name with the new font name in the `webfontloader` options object. Also, do this for `variables.scss` to change the font used for Vuetify typography classes. Finally, do this for `global.scss`, in the `@font-face` property for `font-family` and `src`
+
+Example:
+
+```css
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Roboto");
+  font-display: swap;
+}
+```
+
+## Docker <a name = "docker"></a>
 
 There is basic docker support for those who prefer to develop this way. The full usage docs are in the Dockerfile.
 

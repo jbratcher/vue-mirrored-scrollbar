@@ -37,7 +37,7 @@
                 >{{ blogPost.description }}</v-card-subtitle
               >
               <v-btn
-                class="mt-auto ml-3 mb-12"
+                class="mt-auto ml-3 mb-12 body-2"
                 color="primary"
                 :name="blogPost.title"
                 nuxt

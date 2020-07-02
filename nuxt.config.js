@@ -130,7 +130,7 @@ export default {
   */
   webfontloader: {
     google: {
-      // Loads Open Sans font with weights 300 and 400 + display font as swap
+      // Loads Roboto + display font as swap
       families: ["Roboto&display=swap"]
     }
   },
@@ -155,19 +155,19 @@ export default {
             : css;
         }
       },
-      light: true
-      // themes: {
-      //   light: {
-      //     primary: colors.blueGrey.darken2,
-      //     accent: colors.blue.lighten1,
-      //     secondary: colors.lightBlue.darken3,
-      //     info: colors.blueGrey.lighten1,
-      //     warning: colors.amber.base,
-      //     error: colors.deepOrange.accent4,
-      //     success: colors.green.accent3,
-      //     background: colors.blue.base
-      //   }
-      // }
+      light: true,
+      themes: {
+        light: {
+          primary: colors.blueGrey.darken4,
+          accent: colors.blue.lighten1,
+          secondary: colors.lightBlue.darken3,
+          info: colors.blueGrey.lighten1,
+          warning: colors.amber.base,
+          error: colors.deepOrange.accent4,
+          success: colors.green.accent3,
+          background: colors.blue.base
+        }
+      }
     }
   }
 };

@@ -9,7 +9,7 @@
       :height="navHeight"
       hide-on-scroll
       ref="nav"
-      scroll-threshold="250"
+      :scroll-threshold="$breakpoint.mdAndUp ? '250' : '0'"
       shrink-on-scroll
       tile
       v-scroll="handleScroll"
@@ -52,13 +52,13 @@
       <nuxt />
     </v-main>
     <!-- Footer Area -->
-    <v-footer class="d-flex flex-column align-center py-6 text-center">
-      <h2 class="mb-3" :class="$breakpoint.mdAndUp ? 'display-1' : 'headline'">
+    <v-footer class="d-flex flex-column align-center py-12 text-center">
+      <h2 class="mb-6" :class="$breakpoint.mdAndUp ? 'title' : 'headline'">
         {{ appTitle }}
       </h2>
       <p
         :class="{
-          headline: $breakpoint.mdAndUp,
+          'body-1': $breakpoint.mdAndUp,
           'subtitle-1': $breakpoint.smAndDown
         }"
       >
@@ -72,8 +72,12 @@
         </ul>
       </nav>
       <v-container>
-        {{ new Date().getFullYear() }}&nbsp;-&nbsp;
-        <strong>{{ appTitle }}</strong>
+        <v-row>
+          <v-col>
+            {{ new Date().getFullYear() }}&nbsp;-&nbsp;
+            <strong>{{ appTitle }}</strong>
+          </v-col>
+        </v-row>
       </v-container>
     </v-footer>
   </v-app>
@@ -132,16 +136,16 @@ export default {
           height = "60px";
           break;
         case "sm":
-          height = "70px";
+          height = "60px";
           break;
         case "md":
-          height = "80px";
+          height = "60px";
           break;
         case "lg":
-          height = "90px";
+          height = "80px";
           break;
         case "xl":
-          height = "100px";
+          height = "90px";
           break;
       }
       return height;

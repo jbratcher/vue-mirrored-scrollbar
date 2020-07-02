@@ -10,15 +10,36 @@
         />
 
         <article class="mb-12">
-          <v-card class="py-6" flat>
-            <v-card
-              class="mx-auto"
-              flat
-              :width="$breakpoint.mdAndUp ? '75vw' : '90vw'"
-            >
-              <nuxt-content :document="post" />
-            </v-card>
-          </v-card>
+          <v-container class="py-6">
+            <v-row>
+              <v-col>
+                <v-card
+                  class="mx-auto"
+                  flat
+                  :width="$breakpoint.mdAndUp ? '75vw' : '90vw'"
+                >
+                  <template>
+                    <h2 :class="$breakpoint.mdAndUp ? 'subtitle-1' : 'title'">
+                      Table of Contents
+                    </h2>
+                    <ul>
+                      <li
+                        v-for="link of post.toc"
+                        :key="link.id"
+                        :class="{
+                          toc2: link.depth === 2,
+                          toc3: link.depth === 3
+                        }"
+                      >
+                        <NuxtLink :to="`#${link.id}`">{{ link.text }}</NuxtLink>
+                      </li>
+                    </ul>
+                  </template>
+                  <nuxt-content :document="post" />
+                </v-card>
+              </v-col>
+            </v-row>
+          </v-container>
         </article>
       </v-col>
     </v-row>
