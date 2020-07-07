@@ -9,7 +9,7 @@
       :height="navHeight"
       hide-on-scroll
       ref="nav"
-      :scroll-threshold="$breakpoint.mdAndUp ? '250' : '0'"
+      :scroll-threshold="$breakpoint.mdAndUp ? '450' : '0'"
       shrink-on-scroll
       tile
       v-scroll="handleScroll"

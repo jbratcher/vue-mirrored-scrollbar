@@ -8,6 +8,7 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "export": "nuxt export",
+    "static": "nuxt build --target static && nuxt export",
     "serve": "nuxt serve"
   },
   "dependencies": {

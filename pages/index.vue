@@ -1,5 +1,5 @@
 <template>
-  <v-container class="pa-0">
+  <v-container class="pa-0" fluid>
     <v-row>
       <v-col class="py-0 px-6">
         <!-- Hero Section -->
@@ -14,6 +14,7 @@
                   Push to deploy on Netlify."
         />
         <nuxt-content
+          class="px-6"
           :class="$breakpoint.mdAndUp ? 'py-12' : 'py-6'"
           :document="hello"
         />

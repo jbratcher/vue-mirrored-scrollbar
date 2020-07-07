@@ -1,33 +1,36 @@
 <template>
-  <v-container
-    class="d-flex flex-column align-center justify-center pa-0 white--text"
-  >
-    <v-parallax
-      dark
-      :src="imageSource"
-      lazy-src="https://picsum.photos/id/0/10/6"
-      :height="$breakpoint.mdAndUp ? '700' : '400'"
-    >
-      <v-row align="center" justify="center">
-        <v-col
-          class="text-center"
-          :class="$breakpoint.mdAndUp ? 'pa-12' : 'pa-6'"
-          cols="12"
+  <v-container class="pa-0 white--text" fluid>
+    <v-row>
+      <v-col class="pa-0">
+        <v-parallax
+          dark
+          :src="imageSource"
+          lazy-src="https://picsum.photos/id/0/10/6"
         >
-          <h1
-            :class="$breakpoint.mdAndUp ? 'headline mb-12' : 'display-1 mb-6'"
-          >
-            {{ headerText }}
-          </h1>
-          <p
-            class="mb-12"
-            :class="$breakpoint.mdAndUp ? 'subtitle-1' : 'title'"
-          >
-            {{ subText }}
-          </p>
-        </v-col>
-      </v-row>
-    </v-parallax>
+          <v-row align="center" justify="center">
+            <v-col
+              class="text-center"
+              :class="$breakpoint.mdAndUp ? 'pa-12' : 'pa-6'"
+              cols="12"
+            >
+              <h1
+                :class="
+                  $breakpoint.mdAndUp ? 'headline mb-12' : 'display-1 mb-6'
+                "
+              >
+                {{ headerText }}
+              </h1>
+              <p
+                class="mb-12"
+                :class="$breakpoint.mdAndUp ? 'subtitle-1' : 'title'"
+              >
+                {{ subText }}
+              </p>
+            </v-col>
+          </v-row>
+        </v-parallax>
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 
