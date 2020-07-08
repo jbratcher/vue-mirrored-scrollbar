@@ -129,9 +129,10 @@ export default {
   // handles efficient loading of web fonts
   */
   webfontloader: {
-    google: {
-      // Loads Roboto + display font as swap
-      families: ["Roboto&display=swap"]
+    // use custom instead of google property to prevent flash of invisible text(foit)
+    custom: {
+      families: ["Roboto"],
+      urls: ["https://fonts.googleapis.com/css?family=Roboto&display=swap"]
     }
   },
   /*
