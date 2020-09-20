@@ -13,11 +13,19 @@
           subText="Quickly spin up a static site using Nuxt with Netlify CMS.
                   Push to deploy on Netlify."
         />
-        <nuxt-content
-          class="px-6"
-          :class="$breakpoint.mdAndUp ? 'py-12' : 'py-6'"
-          :document="hello"
-        />
+        <virtual-scroll
+          height="20rem"
+          width="0.5rem"
+          target="content-1"
+        ></virtual-scroll>
+        <div class="content-container">
+          <nuxt-content
+            class="px-6"
+            :class="$breakpoint.mdAndUp ? 'py-12' : 'py-6'"
+            :document="hello"
+            id="content-1"
+          />
+        </div>
       </v-col>
     </v-row>
   </v-container>
@@ -34,4 +42,13 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss">
+.content-container {
+  min-height: 100vh;
+}
+
+.nuxt-content-container {
+  max-height: 20rem;
+  overflow-y: scroll;
+}
+</style>
